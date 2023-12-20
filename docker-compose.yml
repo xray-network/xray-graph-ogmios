@@ -15,7 +15,7 @@ services:
     volumes:
       - node-db:/db
       - node-ipc:/ipc
-#      - ./config/cardano-node-ogmios/topology.json:/config/cardano-node/topology.json
+      - ./config/cardano-node-ogmios/topology.json:/config/cardano-node/topology.json
 
   haproxy:
     image: haproxy:2.8.3
