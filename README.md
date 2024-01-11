@@ -1,6 +1,6 @@
 # XRAY | Graph | Ogmios — Cardano Node Ogmios Docker Compose Stack
 
-Ogmios (Cardano Node) stack for Ray Network ecosystem needs
+Ogmios (Cardano Node) stack for XRAY | Network ecosystem needs
 
 ## Getting Started
 ``` console
@@ -43,6 +43,7 @@ docker compose -p preview up -d --build
 
 </details>
 
+> The default configuration has an SSL key set at `/etc/ssl/xrey.pem`. You can disable it in `config/haproxy/haproxy.cfg`.
 
 ## Advanced Usage
 <details>
