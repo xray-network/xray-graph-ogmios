@@ -6,8 +6,12 @@ Ogmios (Cardano Node) stack for XRAY | Network ecosystem needs
 ``` console
 git clone \
   --recurse-submodules \
-  https://github.com/ray-network/xray-graph-ogmios.git \
+  https://github.com/xray-network/xray-graph-ogmios.git \
   && cd xray-graph-ogmios
+```
+
+``` console
+cp .env.example .env
 ```
 
 <details open>
@@ -51,7 +55,7 @@ docker compose -p preview up -d --build
 <details>
   <summary>Topology</summary>
 
-If you need to specify which connections the Cardano Node should establish (useful if you are using node as a relay) - edit the [topology.json](https://github.com/ray-network/xray-graph-ogmios/blob/main/config/cardano-node-ogmios/topology.json) file before run the `docker compose up` command.
+If you need to specify which connections the Cardano Node should establish (useful if you are using node as a relay) - edit the [topology.json](https://github.com/xray-network/xray-graph-ogmios/blob/main/config/cardano-node-ogmios/topology.json) file before run the `docker compose up` command.
 
 </details>
 
@@ -60,13 +64,13 @@ If you need to specify which connections the Cardano Node should establish (usef
 
 By default, all container ports are bound to 127.0.0.1, so these ports are not available outside the server. Replace `127.0.0.1:${OGMIOS_PORT:-8050}:8050` with `${OGMIOS_PORT:-8050}:8050` if you want to open ports for external access.
 
-Routes are resolved using the `HostResolver` header (this is needed for [XRAY | Graph | Output Load Balancer](https://github.com/ray-network/cloudflare-worker-output-load-balancer)). 
+Routes are resolved using the `HostResolver` header (this is needed for [XRAY | Graph | Output Load Balancer](https://github.com/xray-network/cloudflare-worker-output-load-balancer)). 
 
 Also, time limits on server requests can be disabled (or rather, increased from 30 seconds to 60 minutes) by setting `HAPROXY_JWT_BEARER_TOKEN` in the `.env` file and then passing it over the `BearerResolver` header.
 
 The path to SSL PEM key can be found here `/etc/ssl/xray.pem/`.
 
-Check configuration file here [haproxy.cfg](https://github.com/ray-network/xray-graph-kupmios/blob/main/config/haproxy/haproxy.cfg).
+Check configuration file here [haproxy.cfg](https://github.com/xray-network/xray-graph-ogmios/blob/main/config/haproxy/haproxy.cfg).
 
 </details>
 
