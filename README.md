@@ -73,6 +73,3 @@ The path to SSL PEM key can be found here `/etc/ssl/xray.pem/`.
 Check configuration file here [haproxy.cfg](https://github.com/xray-network/xray-graph-ogmios/blob/main/config/haproxy/haproxy.cfg).
 
 </details>
-
-
-  
