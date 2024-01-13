@@ -15,7 +15,7 @@ cp .env.example .env
 ```
 
 <details open>
-  <summary><b>mainnet</b></summary>
+  <summary><b>MAINNET</b></summary>
 
 ``` console
 docker compose up -d
@@ -24,25 +24,37 @@ docker compose up -d
 </details>
   
 <details open>
-  <summary><b>preprod</b></summary>
+  <summary><b>PREPROD</b></summary>
+
+Default
+
+``` console
+NETWORK=preprod docker compose up -d
+```
+
+Advanced usage (ports mapping, containers name change)
 
 ``` console
 NETWORK=preprod \
 CARDANO_NODE_PORT=3001 \
 OGMIOS_PORT=1338 \
-docker compose -p preprod up -d --build
+docker compose -p preprod up -d
 ```
 
 </details>
   
 <details open>
-  <summary><b>preview</b></summary>
+  <summary><b>PREVIEW</b></summary>
+
+``` console
+NETWORK=preview docker compose up -d
+```
 
 ``` console
 NETWORK=preview \
 CARDANO_NODE_PORT=3002 \
 OGMIOS_PORT=1339 \
-docker compose -p preview up -d --build
+docker compose -p preview up -d
 ```
 
 </details>
@@ -51,25 +63,14 @@ docker compose -p preview up -d --build
 
 > The default configuration contains a custom `config/cardano-node-ogmios/topology.json` file for simply adding XRAY block producers in the `mainnet` network (`xray-graph-ogmios` works as a relay). Comment out the line with this file in `docker-compose.yml` if you are using a network other than `mainnet`.
 
+## Endpoints List
+
+* Ogmios — https://ogmios.dev/api/
+
 ## Advanced Usage
 <details>
   <summary>Topology</summary>
 
-If you need to specify which connections the Cardano Node should establish (useful if you are using node as a relay) - edit the [topology.json](https://github.com/xray-network/xray-graph-ogmios/blob/main/config/cardano-node-ogmios/topology.json) file before run the `docker compose up` command.
-
-</details>
-
-<details>
-  <summary>HAProxy</summary>
-
-By default, all container ports are bound to 127.0.0.1, so these ports are not available outside the server. Replace `127.0.0.1:${OGMIOS_PORT:-8050}:8050` with `${OGMIOS_PORT:-8050}:8050` if you want to open ports for external access.
-
-Routes are resolved using the `HostResolver` header (this is needed for [XRAY | Graph | Output Load Balancer](https://github.com/xray-network/cloudflare-worker-output-load-balancer)). 
-
-Also, time limits on server requests can be disabled (or rather, increased from 30 seconds to 60 minutes) by setting `HAPROXY_JWT_BEARER_TOKEN` in the `.env` file and then passing it over the `BearerResolver` header.
-
-The path to SSL PEM key can be found here `/etc/ssl/xray.pem/`.
-
-Check configuration file here [haproxy.cfg](https://github.com/xray-network/xray-graph-ogmios/blob/main/config/haproxy/haproxy.cfg).
+If you need to specify which connections the Cardano Node should establish (useful if you are using node as a relay) - edit the [topology.json](https://github.com/xray-network/xray-graph-ogmios/blob/main/topology.json) file before run the `docker compose up` command.
 
 </details>
