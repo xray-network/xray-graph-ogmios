@@ -23,7 +23,7 @@ docker compose up -d
 
 </details>
   
-<details open>
+<details>
   <summary><b>PREPROD</b></summary>
 
 Default
@@ -43,7 +43,7 @@ docker compose -p preprod up -d
 
 </details>
   
-<details open>
+<details>
   <summary><b>PREVIEW</b></summary>
 
 ``` console
@@ -58,10 +58,6 @@ docker compose -p preview up -d
 ```
 
 </details>
-
-> The default configuration has an SSL key set at `/etc/ssl/xrey.pem`. You can disable it in `config/haproxy/haproxy.cfg`.
-
-> The default configuration contains a custom `config/cardano-node-ogmios/topology.json` file for simply adding XRAY block producers in the `mainnet` network (`xray-graph-ogmios` works as a relay). Comment out the line with this file in `docker-compose.yml` if you are using a network other than `mainnet`.
 
 ## Endpoints List
 
