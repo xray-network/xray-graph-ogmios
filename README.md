@@ -91,6 +91,6 @@ docker compose -p preview up -d
 <details>
   <summary>Topology</summary>
 
-If you need to specify which connections the Cardano Node should establish (useful if you are using node as a relay) - edit the [topology.json](https://github.com/xray-network/xray-graph-ogmios/blob/main/topology.json) file before run the `docker compose up` command.
+If you need to specify which connections the Cardano Node should establish (useful if you are using node as a relay) - edit the [config/cardano-node-ogmios/topology.json](https://github.com/xray-network/xray-graph-ogmios/blob/main/config/cardano-node-ogmios/topology.json) file before run the `docker compose up` command.
 
 </details>
