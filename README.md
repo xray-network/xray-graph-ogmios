@@ -17,8 +17,16 @@ cp .env.example .env
 <details open>
   <summary><b>MAINNET</b></summary>
 
+Default
+
 ``` console
 docker compose up -d
+```
+
+With HAProxy
+
+``` console
+docker compose --profile haproxy up -d
 ```
 
 </details>
@@ -30,6 +38,12 @@ Default
 
 ``` console
 NETWORK=preprod docker compose up -d
+```
+
+With HAProxy
+
+``` console
+NETWORK=preprod docker compose --profile haproxy up -d
 ```
 
 Advanced usage (ports mapping, containers name change)
@@ -46,9 +60,19 @@ docker compose -p preprod up -d
 <details>
   <summary><b>PREVIEW</b></summary>
 
+Default
+
 ``` console
 NETWORK=preview docker compose up -d
 ```
+
+With HAProxy
+
+``` console
+NETWORK=preview docker compose --profile haproxy up -d
+```
+
+Advanced usage (ports mapping, containers name change)
 
 ``` console
 NETWORK=preview \
