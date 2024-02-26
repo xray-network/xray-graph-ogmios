@@ -1,3 +1,5 @@
+<a href="https://discord.gg/WhZmm46APN"><img alt="Discord" src="https://img.shields.io/discord/852538978946383893?style=for-the-badge&logo=discord&label=Discord&labelColor=%231940ED&color=%233FCB9B"></a>
+
 # XRAY | Graph | Ogmios — Cardano Node Ogmios Docker Compose Stack
 
 Ogmios (Cardano Node) stack for XRAY | Network ecosystem needs
