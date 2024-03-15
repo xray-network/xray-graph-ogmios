@@ -19,10 +19,7 @@
   ],
   "publicRoots": [
     {
-      "accessPoints": [
-        "address": "relays.xray.app",
-        "port": ""
-      ],
+      "accessPoints": [],
       "advertise": false
     }
   ],
