@@ -1,32 +1,13 @@
-version: "3.8"
+name: ogmios
 
 services:
-  cardano-node-ogmios:
-    image: cardanosolutions/cardano-node-ogmios:${OGMIOS_VERSION:-v6.1.0}_${CARDANO_NODE_VERSION:-8.7.3}-${NETWORK:-mainnet}
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "400k"
-        max-file: "20"
-    ports:
-      - 127.0.0.1:${OGMIOS_PORT:-1337}:1337
-      - ${CARDANO_NODE_PORT:-3000}:3000
-    restart: on-failure
-    volumes:
-      - node-db:/db
-      - node-ipc:/ipc
-      - ./config/cardano-node-ogmios/topology.json:/config/cardano-node/topology.json
-
   haproxy:
     image: haproxy:2.8.3
+    profiles: ["mainnet", "preprod", "preview"]
     env_file: ./.env
-    environment:
-      - NETWORK=${NETWORK:-mainnet}
     ports:
-      - ${HAPROXY_PORT:-80}:8080
-      - ${HAPROXY_SSL_PORT:-443}:8443
-    depends_on:
-      - cardano-node-ogmios
+      - 80:8080
+      - 443:8443
     shm_size: '2gb'
     volumes:
       - ./config/haproxy:/usr/local/etc/haproxy
@@ -38,6 +19,7 @@ services:
         max-size: "200k"
         max-file: "10"
 
-volumes:
-  node-db:
-  node-ipc:
+include:
+  - docker-compose.mainnet.yml
+  - docker-compose.preprod.yml
+  - docker-compose.preview.yml
