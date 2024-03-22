@@ -2,7 +2,8 @@
 
 # XRAY | Graph | Ogmios — Cardano Node Ogmios Docker Compose Stack
 
-Ogmios (Cardano Node) stack for XRAY | Network ecosystem needs
+> [!NOTE]
+> Ogmios (Cardano Node) stack for XRAY | Network ecosystem needs
 
 ## Getting Started
 ``` console
@@ -25,12 +26,6 @@ Default
 docker compose up -d
 ```
 
-With HAProxy
-
-``` console
-docker compose --profile haproxy up -d
-```
-
 </details>
   
 <details>
@@ -40,12 +35,6 @@ Default
 
 ``` console
 NETWORK=preprod docker compose up -d
-```
-
-With HAProxy
-
-``` console
-NETWORK=preprod docker compose --profile haproxy up -d
 ```
 
 Advanced usage (ports mapping, containers name change)
@@ -66,12 +55,6 @@ Default
 
 ``` console
 NETWORK=preview docker compose up -d
-```
-
-With HAProxy
-
-``` console
-NETWORK=preview docker compose --profile haproxy up -d
 ```
 
 Advanced usage (ports mapping, containers name change)
