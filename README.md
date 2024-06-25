@@ -1,9 +1,8 @@
 <a href="https://discord.gg/WhZmm46APN"><img alt="Discord" src="https://img.shields.io/discord/852538978946383893?style=for-the-badge&logo=discord&label=Discord&labelColor=%231940ED&color=%233FCB9B"></a>
 
-# XRAY | Graph | Ogmios — Cardano Node Ogmios Docker Compose Stack
+# XRAY/Graph Ogmios — Dockerized Ogmios stack
 
-> [!NOTE]
-> Ogmios (Cardano Node) stack for XRAY | Network ecosystem needs
+XRAY/Graph Ogmios is a tool for fast and predictable deployment of [Haproxy](https://www.haproxy.org/) (TCP/HTTP Load Balancer), and [Ogmios](https://ogmios.dev) (Cardano Node) stack in a docker environment. Used in the [XRAY/Graph](https://xray.app/) distributed Cardano API provider.
 
 ## Getting Started
 ### Prepare Installation
