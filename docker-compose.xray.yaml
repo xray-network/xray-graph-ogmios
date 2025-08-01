@@ -1,0 +1,33 @@
+services:
+  cardano-node-ogmios:
+    image: cardanosolutions/cardano-node-ogmios:v6.13.0_10.1.4-${NETWORK}
+    logging:
+      driver: json-file
+      options:
+        max-size: 400k
+        max-file: "20"
+    ports:
+      - ${OGMIOS_PORT:-127.0.0.1:1337}:1337
+      - ${CARDANO_PORT:-3000}:3000
+    volumes:
+      - node-db:/db
+      - node-ipc:/ipc
+    restart: on-failure
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.cardano-node-ogmios-${NETWORK}.rule=Host(`any`) || (Header(`Host-Resolver`,`ogmios/${NETWORK}`) && Header(`Bearer-Resolver`,`${BEARER_RESOLVER_TOKEN}`))
+      - traefik.http.routers.cardano-node-ogmios-${NETWORK}.entrypoints=websecure
+      - traefik.http.routers.cardano-node-ogmios-${NETWORK}.tls=true
+      - traefik.http.routers.cardano-node-ogmios-${NETWORK}.service=cardano-node-ogmios-${NETWORK}
+      - traefik.http.services.cardano-node-ogmios-${NETWORK}.loadbalancer.server.port=1337
+    networks:
+      - default
+      - traefik
+
+volumes:
+  node-db:
+  node-ipc:
+
+networks:
+  traefik:
+    external: true
