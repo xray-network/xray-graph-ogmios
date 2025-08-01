@@ -14,6 +14,19 @@ services:
       - node-ipc:/ipc
     restart: on-failure
 
+  rapidoc-ogmios:
+    build:
+      context: .
+      target: rapidoc-ogmios
+    ports:
+      - ${RAPIDOC_OGMIOS_PORT:-2500}:2500
+    restart: on-failure
+    logging:
+      driver: json-file
+      options:
+        max-size: 200k
+        max-file: "10"
+
 volumes:
   node-db:
   node-ipc:
