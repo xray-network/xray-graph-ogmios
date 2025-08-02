@@ -106,6 +106,13 @@ docker start *container_id*
 </details>
 
 <details>
+  <summary><b>TypeScript Client</b></summary>
+  
+We recommend to use `cardano-ogmios-client`. Visit [cardano-koios-client](https://github.com/xray-network/cardano-ogmios-client) repo for more information.
+
+</details>
+
+<details>
   <summary><b>Using in Graph Cluster (Traefik Reverse Proxy)</b></summary>
 
 1. Clone and run Traefik:
@@ -129,4 +136,5 @@ docker compose -f docker-compose.xray.yaml -p ogmios-mainnet up -d --build
 * Ogmios — https://ogmios.dev/
 * Ogmios Rapidoc Playground (OpenAPI Schema) - https://graph.xray.app/output/services/ogmios/mainnet/api/v1/
 * Ogmios OpenAPI Schema (JSON) - https://graph.xray.app/output/services/ogmios/mainnet/api/v1/openapi.json
+* TypeScript Client — https://github.com/xray-network/cardano-ogmios-client
 * Traefik — https://traefik.io/traefik
