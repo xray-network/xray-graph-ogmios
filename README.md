@@ -134,7 +134,7 @@ docker compose -f docker-compose.xray.yaml -p ogmios-mainnet up -d --build
 ## Documentation
 
 * Ogmios — https://ogmios.dev/
-* Ogmios Rapidoc Playground (OpenAPI Schema) - https://graph.xray.app/output/services/ogmios/mainnet/api/v1/
-* Ogmios OpenAPI Schema (JSON) - https://graph.xray.app/output/services/ogmios/mainnet/api/v1/openapi.json
-* TypeScript Client — https://github.com/xray-network/cardano-ogmios-client
+* Ogmios Rapidoc Playground (OpenAPI Schema) — https://graph.xray.app/output/services/ogmios/mainnet/api/v1/
+* Ogmios OpenAPI Schema (JSON) — https://graph.xray.app/output/services/ogmios/mainnet/api/v1/openapi.json
+* Ogmios TypeScript Client — https://github.com/xray-network/cardano-ogmios-client
 * Traefik — https://traefik.io/traefik
