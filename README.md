@@ -108,7 +108,7 @@ docker start *container_id*
 <details>
   <summary><b>TypeScript Client</b></summary>
   
-We recommend to use `cardano-ogmios-client`. Visit [cardano-koios-client](https://github.com/xray-network/cardano-ogmios-client) repo for more information.
+We recommend to use `cardano-ogmios-client`. Visit [cardano-ogmios-client](https://github.com/xray-network/cardano-ogmios-client) repo for more information.
 
 </details>
 
